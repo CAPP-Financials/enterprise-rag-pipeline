@@ -1,0 +1,52 @@
+# Enterprise RAG Pipeline Configuration
+
+# Pinecone Vector Store Configuration
+pinecone:
+  api_key: ${PINECONE_API_KEY}  # Set via environment variable
+  index_name: enterprise-rag-index
+  environment: us-east-1-aws
+  embedding_model: openai
+  embedding_dim: 1536
+  metric: cosine
+
+# Embedding Model Configuration
+embedding:
+  model_type: openai  # "openai" or "huggingface"
+  model_name: text-embedding-3-small
+  dimension: 1536
+
+# Document Chunking Configuration
+chunking:
+  chunk_size: 512  # Characters per chunk
+  chunk_overlap: 50  # Overlap between chunks
+  use_semantic_refinement: true  # Use semantic boundaries
+  semantic_model: all-MiniLM-L6-v2
+
+# Retrieval Configuration
+retrieval:
+  top_k: 5  # Number of final results
+  fetch_k: 20  # Candidates to fetch before MMR filtering
+  alpha: 0.5  # Weight for dense retrieval (0.5 = equal weight)
+  use_mmr: true  # Enable Maximal Marginal Relevance filtering
+  mmr_lambda: 0.5  # MMR trade-off (0=diversity, 1=relevance)
+
+# LLM Generation Configuration
+generation:
+  model: gpt-5-mini
+  temperature: 0.7
+  max_tokens: 1000
+  system_prompt: "You are a helpful assistant that answers questions based on provided context. Be concise and accurate."
+
+# Evaluation Configuration
+evaluation:
+  enable_ragas: true  # Enable RAGAS evaluation
+  evaluation_batch_size: 10
+  save_evaluations: true
+  evaluation_output_dir: ./evaluations
+
+# Enterprise Settings
+default_namespace: default  # Default namespace for queries
+enable_query_expansion: true  # Enable query rewriting
+num_query_expansions: 3  # Number of query variants
+enable_context_deduplication: true  # Remove duplicate context
+log_level: INFO  # Logging level
