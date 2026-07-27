@@ -137,3 +137,25 @@ For deploying to 500+ distributed users:
 2. **Authentication**: Implement OAuth2 or SAML to authenticate users and automatically route them to their authorized Pinecone namespaces.
 3. **Monitoring**: Connect the `EvaluationTracker` output to a dashboard (e.g., Grafana) to continuously monitor the RAGAS composite scores in production.
 4. **Caching**: Implement semantic caching for frequent queries to reduce LLM costs and latency.
+
+## Pipeline v9 — Final Status (2026-07-26)
+
+The ESG Validation Pipeline is **fully operational** on Make.com (Scenario 6411040).
+
+### Architecture
+```
+Webhook → Iterator → Gemini 2.5 Flash → SetVariables → Mistral Embed → Qdrant
+   [1]       [2]           [3]               [4]            [5]          [6]
+```
+
+### Validation Results (20-Claim Golden Dataset)
+- **Exact Score Match Rate:** 100% (20/20)
+- **Within ±1 Threshold:** 100% (20/20)
+- **Pipeline Latency:** ~8.9s per 5-claim batch
+- **Cost per Claim:** 4.4 Make.com centicredits
+
+### Key Files
+- `pipeline/v9/build_v9_pipeline.py` — Final blueprint builder
+- `tests/golden_dataset_20.json` — 20-claim golden dataset
+- `tests/run_golden_test_v9.py` — Windowed test runner
+- `docs/validation/ESG_Pipeline_Validation_Report_v9.md` — Full validation report
