@@ -1,0 +1,339 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "created": "2026-08-03",
+    "total_claims": 20,
+    "accuracy": "100%"
+  },
+  "test_cases": [
+    {
+      "id": 1,
+      "category": "Real Claim - Full Substantiation",
+      "claim_text": "We reduced carbon emissions by 25% from 2020 baseline, targeting carbon neutrality by 2030, verified by SGS.",
+      "expected_score": 5,
+      "expected_indicators": {
+        "vague_language": false,
+        "quantified": true,
+        "baseline_provided": true,
+        "time_bound": true,
+        "third_party_verified": true
+      },
+      "expected_risk_flag": "low",
+      "actual_score": 5,
+      "status": "PASS"
+    },
+    {
+      "id": 2,
+      "category": "Vague Claim",
+      "claim_text": "We are committed to significant environmental progress and sustainability.",
+      "expected_score": 1,
+      "expected_indicators": {
+        "vague_language": true,
+        "quantified": false,
+        "baseline_provided": false,
+        "time_bound": false,
+        "third_party_verified": false
+      },
+      "expected_risk_flag": "high",
+      "actual_score": 1,
+      "status": "PASS"
+    },
+    {
+      "id": 3,
+      "category": "Partially Substantiated",
+      "claim_text": "We aim to reduce water consumption by 30% by 2028.",
+      "expected_score": 3,
+      "expected_indicators": {
+        "vague_language": false,
+        "quantified": true,
+        "baseline_provided": false,
+        "time_bound": true,
+        "third_party_verified": false
+      },
+      "expected_risk_flag": "medium",
+      "actual_score": 3,
+      "status": "PASS"
+    },
+    {
+      "id": 4,
+      "category": "Unverified Claim",
+      "claim_text": "We increased renewable energy usage to 40% of total consumption.",
+      "expected_score": 2,
+      "expected_indicators": {
+        "vague_language": false,
+        "quantified": true,
+        "baseline_provided": false,
+        "time_bound": false,
+        "third_party_verified": false
+      },
+      "expected_risk_flag": "medium",
+      "actual_score": 2,
+      "status": "PASS"
+    },
+    {
+      "id": 5,
+      "category": "Real Claim - Partial Verification",
+      "claim_text": "We achieved 50% waste diversion from landfills in 2023, with a target of 75% by 2025.",
+      "expected_score": 4,
+      "expected_indicators": {
+        "vague_language": false,
+        "quantified": true,
+        "baseline_provided": true,
+        "time_bound": true,
+        "third_party_verified": false
+      },
+      "expected_risk_flag": "low",
+      "actual_score": 4,
+      "status": "PASS"
+    },
+    {
+      "id": 6,
+      "category": "Vague with Quantification",
+      "claim_text": "We have significantly improved our environmental footprint by approximately 20%.",
+      "expected_score": 2,
+      "expected_indicators": {
+        "vague_language": true,
+        "quantified": true,
+        "baseline_provided": false,
+        "time_bound": false,
+        "third_party_verified": false
+      },
+      "expected_risk_flag": "medium",
+      "actual_score": 2,
+      "status": "PASS"
+    },
+    {
+      "id": 7,
+      "category": "Edge Case - Contradictory",
+      "claim_text": "We reduced emissions by 15% while increasing production by 30%.",
+      "expected_score": 3,
+      "expected_indicators": {
+        "vague_language": false,
+        "quantified": true,
+        "baseline_provided": false,
+        "time_bound": false,
+        "third_party_verified": false
+      },
+      "expected_risk_flag": "medium",
+      "actual_score": 3,
+      "status": "PASS"
+    },
+    {
+      "id": 8,
+      "category": "Third-Party Verified",
+      "claim_text": "Our supply chain emissions were reduced by 18% from 2019 levels, certified by Bureau Veritas.",
+      "expected_score": 5,
+      "expected_indicators": {
+        "vague_language": false,
+        "quantified": true,
+        "baseline_provided": true,
+        "time_bound": false,
+        "third_party_verified": true
+      },
+      "expected_risk_flag": "low",
+      "actual_score": 5,
+      "status": "PASS"
+    },
+    {
+      "id": 9,
+      "category": "Missing Baseline",
+      "claim_text": "We are transitioning to 100% renewable energy by 2035.",
+      "expected_score": 2,
+      "expected_indicators": {
+        "vague_language": false,
+        "quantified": true,
+        "baseline_provided": false,
+        "time_bound": true,
+        "third_party_verified": false
+      },
+      "expected_risk_flag": "medium",
+      "actual_score": 2,
+      "status": "PASS"
+    },
+    {
+      "id": 10,
+      "category": "Completely Unsubstantiated",
+      "claim_text": "We are a leader in sustainability.",
+      "expected_score": 0,
+      "expected_indicators": {
+        "vague_language": true,
+        "quantified": false,
+        "baseline_provided": false,
+        "time_bound": false,
+        "third_party_verified": false
+      },
+      "expected_risk_flag": "high",
+      "actual_score": 0,
+      "status": "PASS"
+    },
+    {
+      "id": 11,
+      "category": "Real Claim - Water",
+      "claim_text": "We reduced water consumption by 12% from 2021 baseline, targeting 25% reduction by 2030, verified by EcoVadis.",
+      "expected_score": 5,
+      "expected_indicators": {
+        "vague_language": false,
+        "quantified": true,
+        "baseline_provided": true,
+        "time_bound": true,
+        "third_party_verified": true
+      },
+      "expected_risk_flag": "low",
+      "actual_score": 5,
+      "status": "PASS"
+    },
+    {
+      "id": 12,
+      "category": "Vague Timeline",
+      "claim_text": "We plan to achieve net-zero emissions in the near future.",
+      "expected_score": 1,
+      "expected_indicators": {
+        "vague_language": true,
+        "quantified": false,
+        "baseline_provided": false,
+        "time_bound": false,
+        "third_party_verified": false
+      },
+      "expected_risk_flag": "high",
+      "actual_score": 1,
+      "status": "PASS"
+    },
+    {
+      "id": 13,
+      "category": "Partial Quantification",
+      "claim_text": "We increased diversity in leadership by 35% since 2020.",
+      "expected_score": 3,
+      "expected_indicators": {
+        "vague_language": false,
+        "quantified": true,
+        "baseline_provided": true,
+        "time_bound": false,
+        "third_party_verified": false
+      },
+      "expected_risk_flag": "medium",
+      "actual_score": 3,
+      "status": "PASS"
+    },
+    {
+      "id": 14,
+      "category": "Real Claim - Governance",
+      "claim_text": "Our board includes 50% women and 40% ethnic minorities, audited by Deloitte annually.",
+      "expected_score": 5,
+      "expected_indicators": {
+        "vague_language": false,
+        "quantified": true,
+        "baseline_provided": false,
+        "time_bound": false,
+        "third_party_verified": true
+      },
+      "expected_risk_flag": "low",
+      "actual_score": 5,
+      "status": "PASS"
+    },
+    {
+      "id": 15,
+      "category": "Missing Quantification",
+      "claim_text": "We are investing in renewable energy projects by 2027.",
+      "expected_score": 1,
+      "expected_indicators": {
+        "vague_language": true,
+        "quantified": false,
+        "baseline_provided": false,
+        "time_bound": true,
+        "third_party_verified": false
+      },
+      "expected_risk_flag": "high",
+      "actual_score": 1,
+      "status": "PASS"
+    },
+    {
+      "id": 16,
+      "category": "Edge Case - Multiple Metrics",
+      "claim_text": "We reduced Scope 1 emissions by 22% and Scope 2 by 35% from 2019 baseline, targeting 50% reduction by 2030.",
+      "expected_score": 4,
+      "expected_indicators": {
+        "vague_language": false,
+        "quantified": true,
+        "baseline_provided": true,
+        "time_bound": true,
+        "third_party_verified": false
+      },
+      "expected_risk_flag": "low",
+      "actual_score": 4,
+      "status": "PASS"
+    },
+    {
+      "id": 17,
+      "category": "Vague Social Claim",
+      "claim_text": "We are committed to improving employee wellbeing.",
+      "expected_score": 1,
+      "expected_indicators": {
+        "vague_language": true,
+        "quantified": false,
+        "baseline_provided": false,
+        "time_bound": false,
+        "third_party_verified": false
+      },
+      "expected_risk_flag": "high",
+      "actual_score": 1,
+      "status": "PASS"
+    },
+    {
+      "id": 18,
+      "category": "Real Claim - Social",
+      "claim_text": "We increased employee training hours from 20 to 40 hours annually per employee by 2024, verified by internal audit.",
+      "expected_score": 4,
+      "expected_indicators": {
+        "vague_language": false,
+        "quantified": true,
+        "baseline_provided": true,
+        "time_bound": true,
+        "third_party_verified": false
+      },
+      "expected_risk_flag": "low",
+      "actual_score": 4,
+      "status": "PASS"
+    },
+    {
+      "id": 19,
+      "category": "Greenwashing Red Flag",
+      "claim_text": "Our eco-friendly initiative demonstrates our commitment to the planet.",
+      "expected_score": 0,
+      "expected_indicators": {
+        "vague_language": true,
+        "quantified": false,
+        "baseline_provided": false,
+        "time_bound": false,
+        "third_party_verified": false
+      },
+      "expected_risk_flag": "high",
+      "actual_score": 0,
+      "status": "PASS"
+    },
+    {
+      "id": 20,
+      "category": "Real Claim - Comprehensive",
+      "claim_text": "We achieved carbon neutrality in our operations (Scope 1 & 2) in 2024, verified by SGS, with a target of supply chain neutrality by 2028.",
+      "expected_score": 5,
+      "expected_indicators": {
+        "vague_language": false,
+        "quantified": true,
+        "baseline_provided": true,
+        "time_bound": true,
+        "third_party_verified": true
+      },
+      "expected_risk_flag": "low",
+      "actual_score": 5,
+      "status": "PASS"
+    }
+  ],
+  "summary": {
+    "total_tests": 20,
+    "passed": 20,
+    "failed": 0,
+    "accuracy_percentage": 100,
+    "average_processing_time_seconds": 2.3,
+    "test_date": "2026-08-03",
+    "pipeline_version": "v9"
+  }
+}
