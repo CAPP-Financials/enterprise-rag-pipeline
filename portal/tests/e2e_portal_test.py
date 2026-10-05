@@ -15,11 +15,11 @@ import time
 import subprocess
 
 # ─── Config ───────────────────────────────────────────────────────────────────
-WEBHOOK_URL = "https://hook.eu1.make.com/wjrgqmyidyzporevwtmbpm5x4f15thr4"
+WEBHOOK_URL = "https://hook.eu1.make.com/YOUR-WEBHOOK-ID"
 COMPANY_NAME = "GreenTech Solutions PLC"
 YEAR = "2024"
 JOB_ID = "portal-e2e-test-001"
-DOC_PATH = "/home/ubuntu/greentech_esg_report_2024.txt"
+DOC_PATH = os.path.join(os.path.dirname(__file__), "greentech_esg_report_2024.txt"
 
 # ─── ESG keyword categories (mirrors esgParser.ts) ───────────────────────────
 ESG_CATEGORIES = {

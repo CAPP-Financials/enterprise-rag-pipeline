@@ -45,7 +45,7 @@ The Enterprise RAG Pipeline has been successfully designed, implemented, tested,
 
 ## Architecture Summary
 
-The pipeline implements a five-layer architecture designed to achieve a **40% improvement in query relevance scores**:
+The pipeline implements a five-layer architecture designed to target a **40% improvement in query relevance scores** (unmeasured design goal):
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -238,7 +238,7 @@ Deploy query handler as AWS Lambda or Google Cloud Function
 
 ## Conclusion
 
-The Enterprise RAG Pipeline is a production-grade system designed to deliver high-relevance query responses to enterprise users at scale. With semantic chunking, hybrid retrieval, MMR diversity filtering, query expansion, and RAGAS evaluation, the pipeline achieves the target 40% improvement in query relevance scores while maintaining sub-4-second latency and sub-$0.05 cost per query.
+The Enterprise RAG Pipeline is a production-grade system designed to deliver high-relevance query responses to enterprise users at scale. With semantic chunking, hybrid retrieval, MMR diversity filtering, query expansion, and RAGAS evaluation, the pipeline is designed to reach a targeted 40% improvement in query relevance scores (not yet measured on real data) while maintaining sub-4-second latency and sub-$0.05 cost per query.
 
 The modular architecture enables easy customization and scaling, while comprehensive documentation and CLI interface support rapid deployment and ongoing maintenance.
 

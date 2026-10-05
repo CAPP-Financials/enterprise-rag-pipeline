@@ -2,6 +2,10 @@
 
 A production-grade Retrieval-Augmented Generation (RAG) pipeline designed to deliver highly relevant, consistent query responses for enterprise environments with 500+ distributed users.
 
+## Status
+
+Built and tested on synthetic data only. The 123 tests in `tests/` mock the LLM and the vector store, so they verify pipeline logic (chunking, hybrid ranking, query expansion, orchestration, metric plumbing), not retrieval quality. The "40% improvement in query relevance" figure is a design target; it has not been measured against real documents or users. Run the tests with `python -m pytest tests/test_chunking.py tests/test_evaluation.py tests/test_hybrid_search.py tests/test_integration.py tests/test_orchestration.py`.
+
 ## Architecture Highlights
 
 This pipeline replaces baseline keyword-matching with a sophisticated architecture:
@@ -11,7 +15,7 @@ This pipeline replaces baseline keyword-matching with a sophisticated architectu
 3. **Hybrid Retrieval**: Combines dense vector similarity (OpenAI embeddings) with sparse keyword matching (BM25), intelligently weighted to capture both abstract concepts and specific enterprise terminology.
 4. **MMR Diversity Filtering**: Applies Maximal Marginal Relevance (MMR) to the retrieval candidate pool, preventing redundant results and ensuring the LLM receives diverse, comprehensive context.
 5. **LangGraph Orchestration**: Implements a stateful workflow that expands narrow queries into multiple variants before retrieval, broadening recall without sacrificing precision.
-6. **RAGAS Evaluation Framework**: Includes automated metrics for Context Relevance, Faithfulness, Answer Relevance, and Context Precision to validate the target 40% improvement in query relevance scores.
+6. **RAGAS Evaluation Framework**: Includes automated metrics for Context Relevance, Faithfulness, Answer Relevance, and Context Precision to measure progress toward a targeted 40% improvement in query relevance (not yet measured).
 
 ## Project Structure
 

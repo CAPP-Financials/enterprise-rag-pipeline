@@ -1,15 +1,16 @@
 """
 Golden Dataset Test Runner v9
 Fires all 20 golden claims through the live Make.com pipeline in 4 batches of 5.
-Webhook: https://hook.eu1.make.com/wjrgqmyidyzporevwtmbpm5x4f15thr4
+Webhook: https://hook.eu1.make.com/YOUR-WEBHOOK-ID
 """
+import os
 import json
 import time
 import subprocess
 
-WEBHOOK_URL = "https://hook.eu1.make.com/wjrgqmyidyzporevwtmbpm5x4f15thr4"
+WEBHOOK_URL = "https://hook.eu1.make.com/YOUR-WEBHOOK-ID"
 
-with open("/home/ubuntu/golden_dataset_20.json") as f:
+with open(os.path.join(os.path.dirname(__file__), "golden_dataset_20.json")) as f:
     claims = json.load(f)
 
 # Build batches of 5

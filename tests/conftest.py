@@ -14,6 +14,6 @@ logging.basicConfig(
     format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
     handlers=[
         logging.StreamHandler(),
-        logging.FileHandler("/home/ubuntu/enterprise-rag-pipeline/test_run.log", mode="w"),
+        logging.FileHandler("test_run.log", mode="w"),
     ]
 )

@@ -67,7 +67,7 @@ const REPORT_TYPES = [
 
 // ─── Make.com webhook URL — live VeriGreen ESG pipeline ───────────────────────
 const MAKE_WEBHOOK_URL = import.meta.env.VITE_MAKE_WEBHOOK_URL ||
-  "https://hook.eu1.make.com/wjrgqmyidyzporevwtmbpm5x4f15thr4";
+  "https://hook.eu1.make.com/YOUR-WEBHOOK-ID";
 
 // ─── Component ────────────────────────────────────────────────────────────────
 

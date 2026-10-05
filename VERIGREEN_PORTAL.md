@@ -42,7 +42,7 @@
 - Sends structured JSON payload to Make.com webhook
 
 **Webhook Integration:**
-- Endpoint: `https://hook.eu1.make.com/wjrgqmyidyzporevwtmbpm5x4f15thr4`
+- Endpoint: `https://hook.eu1.make.com/YOUR-WEBHOOK-ID`
 - Payload: `{ jobId, companyName, reportingYear, reportType, claims: [...] }`
 - Response: Job ID for polling results dashboard
 
@@ -122,7 +122,7 @@ pnpm run build
 **Environment Variables:**
 ```env
 VITE_RESULTS_WEBHOOK_URL=https://hook.eu1.make.com/your-results-webhook-id
-VITE_MAKE_WEBHOOK_URL=https://hook.eu1.make.com/wjrgqmyidyzporevwtmbpm5x4f15thr4
+VITE_MAKE_WEBHOOK_URL=https://hook.eu1.make.com/YOUR-WEBHOOK-ID
 ```
 
 ### 2. Configure Make.com Scenario
