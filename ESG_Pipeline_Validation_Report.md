@@ -23,7 +23,7 @@ The lean v5 blueprint implements a 5-module sequential flow on Make.com:
 
 | Module | App | Function | Connection |
 |--------|-----|----------|------------|
-| 1 | `gateway:CustomWebHook` | Receives JSON payload with `job_id`, `company_name`, `claims[]` | Webhook: `wjrgqmyidyzporevwtmbpm5x4f15thr4` |
+| 1 | `gateway:CustomWebHook` | Receives JSON payload with `job_id`, `company_name`, `claims[]` | Webhook: `<webhook-id>` |
 | 2 | `builtin:BasicFeeder` | Iterates over `claims[]` array, one bundle per claim | Built-in |
 | 3 | `gemini-ai:extractStructuredData` | Scores each claim on 5 ESG indicators using Gemini 2.5 Flash | Conn: 8749989 |
 | 4 | `mistral-ai:createEmbeddings` | Generates 1024-dim vector from `raw_text` using `mistral-embed` | Conn: 8749892 |

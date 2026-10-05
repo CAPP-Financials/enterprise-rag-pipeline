@@ -12,9 +12,9 @@ Key corrections vs prior attempts:
   - BasicFeeder: array goes in mapper, not parameters
   - Qdrant: payloadType=json + payloadJson string (not payload dict)
 """
-import json, requests
+import json, os, requests
 
-MAKE_TOKEN = "967b02bd-c9ae-447d-a311-1170731fccde"
+MAKE_TOKEN = os.environ["MAKE_TOKEN"]  # never commit this
 SCENARIO_ID = 6411040
 BASE_URL = "https://eu1.make.com/api/v2"
 
