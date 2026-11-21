@@ -11,7 +11,7 @@
 
 A comprehensive deep-dive quality assurance pass was conducted on the Enterprise RAG Pipeline to guarantee robustness, scalability, and strict enterprise data isolation. This QA phase focused on edge-case hardening, comprehensive test coverage, and validation of the RAGAS evaluation framework.
 
-The pipeline now successfully passes **123 unit tests** and **43 end-to-end validation checks** with zero failures. Furthermore, live integration testing confirmed a **composite RAGAS score of 0.923**, significantly exceeding the initial target of 0.84.
+The pipeline now successfully passes **123 unit tests** and **43 end-to-end validation checks** with zero failures. The 123 unit tests run with a mocked LLM and synthetic documents. A RAGAS evaluation harness is built (`src/evaluation/ragas_metrics.py`), but no baseline run has been saved yet, so no RAGAS score is reported. The composite target remains 0.84.
 
 This report serves as the formal proof of validation across all modules, detailing the edge cases resolved and the specific test scenarios verified.
 
@@ -127,15 +127,9 @@ To prove the pipeline works in realistic scenarios, a standalone validation scri
 
 ---
 
-## 4. Performance Metrics Achieved
+## 4. Performance Metrics
 
-The live integration tests validated the pipeline against the original RAGAS targets. The system significantly outperformed the baseline.
-
-| Metric | Target | Achieved | Status |
-|--------|--------|----------|--------|
-| Faithfulness | N/A | 1.000 | Excellent |
-| Answer Relevance | N/A | 0.838 | Good |
-| **Composite RAGAS Score** | **0.840** | **0.923** | ✅ **Exceeded Target** |
+A RAGAS evaluation harness is built (`src/evaluation/ragas_metrics.py`), but no baseline run has been saved yet, so no RAGAS score is reported here. The target composite RAGAS score is 0.84; it has not been measured against real documents or users.
 
 ---
 
@@ -143,4 +137,4 @@ The live integration tests validated the pipeline against the original RAGAS tar
 
 The Enterprise RAG Pipeline has been thoroughly hardened. All edge cases regarding input sanitisation, API compatibility, parameter bounds, and mathematical stability (NaN/Inf) have been resolved. The addition of structured logging provides full observability into the pipeline's execution.
 
-The codebase, along with this test report and the complete test suite, has been pushed to the [GitHub repository](https://github.com/CAPP-Financials/enterprise-rag-pipeline), establishing it as the single source of truth for this project. The system is fully production-ready for deployment to 500+ enterprise users.
+The codebase, along with this test report and the complete test suite, has been pushed to the [GitHub repository](https://github.com/CAPP-Financials/enterprise-rag-pipeline), establishing it as the single source of truth for this project. The pipeline is designed to scale toward 500+ users; it has not yet been deployed.

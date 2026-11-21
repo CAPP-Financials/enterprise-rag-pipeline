@@ -2,7 +2,7 @@
 
 ## System Design Overview
 
-The Enterprise RAG Pipeline is architected as a modular, scalable system designed to deliver high-relevance query responses to 500+ distributed enterprise users. The system replaces baseline keyword-matching with a sophisticated five-layer architecture that targets a 40% improvement in query relevance scores as measured by RAGAS metrics.
+The Enterprise RAG Pipeline is architected as a modular, scalable system designed to deliver high-relevance query responses and to scale toward 500+ users (not yet deployed). The system replaces baseline keyword-matching with a sophisticated five-layer architecture that targets a 40% improvement in query relevance scores as measured by RAGAS metrics.
 
 ## Layer 1: Ingestion and Semantic Chunking
 
@@ -316,9 +316,9 @@ The `RAGASEvaluator` class computes four metrics:
 Composite Score = (Context Relevance + Faithfulness + Answer Relevance + Context Precision) / 4
 ```
 
-**Baseline** (keyword-matching): ~0.60
+**Baseline** (keyword-matching, assumed, not measured): ~0.60
 **Target** (semantic RAG): ~0.84
-**Improvement**: 40%
+**Target improvement**: 40% (design target, not yet measured)
 
 ### Evaluation Tracking
 
@@ -403,7 +403,7 @@ This flexibility enables:
 
 ## Scaling Architecture
 
-For 500+ distributed users:
+To reach the 500+ user design target (not yet deployed):
 
 1. **Horizontal Scaling**: Deploy multiple instances behind a load balancer.
 2. **Namespace Isolation**: Each business unit's data is independently queryable.

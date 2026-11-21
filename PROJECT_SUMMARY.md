@@ -86,7 +86,7 @@ The pipeline implements a five-layer architecture designed to target a **40% imp
 - Pinecone integration with namespace isolation
 - Strict data separation per business unit (finance, HR, engineering, etc.)
 - Batch ingestion with metadata enrichment
-- Scalable to 500+ distributed users
+- Designed to scale toward 500+ users (not yet deployed)
 
 ### ✅ Hybrid Retrieval
 - Dense retrieval via OpenAI embeddings
@@ -137,9 +137,9 @@ The pipeline implements a five-layer architecture designed to target a **40% imp
 ## Evaluation Metrics
 
 ### Target Improvement
-- **Baseline** (keyword-matching): ~0.60 composite score
+- **Baseline** (keyword-matching, assumed, not measured): ~0.60 composite score
 - **Target** (semantic RAG): ~0.84 composite score
-- **Improvement**: 40%
+- **Target improvement**: 40% (design target, not yet measured)
 
 ### Individual Metric Targets
 - Context Relevance: > 0.85

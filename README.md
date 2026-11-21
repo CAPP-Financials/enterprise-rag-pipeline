@@ -1,6 +1,6 @@
 # Enterprise RAG Pipeline
 
-A production-grade Retrieval-Augmented Generation (RAG) pipeline designed to deliver highly relevant, consistent query responses for enterprise environments with 500+ distributed users.
+A production-grade Retrieval-Augmented Generation (RAG) pipeline designed to deliver highly relevant, consistent query responses for enterprise environments. It is designed to scale toward 500+ users; it has not yet been deployed.
 
 ## Status
 
@@ -135,7 +135,7 @@ python main.py query --query "Search text" --config custom_config.yaml
 
 ## Enterprise Deployment Considerations
 
-For deploying to 500+ distributed users:
+For a future deployment at the 500+ user design target (not yet deployed):
 
 1. **API Integration**: Wrap the `RAGPipeline` class in a FastAPI or Flask application to serve requests over HTTP.
 2. **Authentication**: Implement OAuth2 or SAML to authenticate users and automatically route them to their authorized Pinecone namespaces.

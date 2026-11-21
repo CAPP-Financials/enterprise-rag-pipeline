@@ -2,7 +2,7 @@
 
 ## Executive Summary
 
-This guide provides step-by-step instructions for deploying the Enterprise RAG Pipeline to production environments serving 500+ distributed users. The pipeline is designed to achieve a **40% improvement in query relevance scores** through semantic chunking, hybrid retrieval, MMR diversity filtering, query expansion, and RAGAS-based evaluation.
+This guide provides step-by-step instructions for deploying the Enterprise RAG Pipeline to production environments. The pipeline is designed to scale toward 500+ users (not yet deployed) and targets a **40% improvement in query relevance scores** (design target, not yet measured) through semantic chunking, hybrid retrieval, MMR diversity filtering, query expansion, and RAGAS-based evaluation.
 
 ## Architecture Overview
 
@@ -164,9 +164,9 @@ The pipeline automatically evaluates generated answers using four RAGAS metrics:
 
 ### 4.2 Interpreting Evaluation Results
 
-The composite score is the average of all four metrics. A 40% improvement means:
+The composite score is the average of all four metrics. The targeted 40% improvement (not yet measured) means:
 
-- **Baseline**: ~0.60 composite score (keyword-matching system)
+- **Baseline**: ~0.60 composite score (keyword-matching system, assumed, not measured)
 - **Target**: ~0.84 composite score (semantic RAG system)
 
 ### 4.3 Continuous Monitoring
@@ -402,7 +402,7 @@ Expected performance on a standard deployment:
 |--------|--------|-------|
 | Query Latency | < 3 seconds | Includes expansion, retrieval, and generation |
 | Throughput | 100+ QPS | With 3 replicas |
-| RAGAS Composite Score | > 0.84 | 40% improvement over baseline |
+| RAGAS Composite Score | > 0.84 | Target: 40% improvement over baseline (not yet measured) |
 | Cost per Query | < $0.05 | Depends on LLM pricing |
 
 ## Support and Maintenance
